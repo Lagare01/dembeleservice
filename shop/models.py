@@ -15,6 +15,7 @@ class product(models.Model):
     description = models.TextField()
     category =models.ForeignKey(category, related_name='categorie', on_delete=models.CASCADE)
     image = models.CharField(max_length=5000)
+    image = models.ImageField(upload_to='images')
     date_added = models.DateTimeField(auto_now= True)
     class Meta :
         ordering = ['-date_added']
